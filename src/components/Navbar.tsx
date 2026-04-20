@@ -36,6 +36,7 @@ export default function Navbar() {
         </motion.a>
         <nav className={styles.nav}>
           <a href="#showcase" className={styles.navLink}>Showcase</a>
+          <a href="#case-studies" className={styles.navLink}>Case Studies</a>
           <a href="#benefits" className={styles.navLink}>Benefits</a>
           <a href="#process" className={styles.navLink}>Process</a>
           <a href="#faq" className={styles.navLink}>FAQ</a>

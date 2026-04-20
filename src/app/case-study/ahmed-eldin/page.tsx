@@ -60,15 +60,14 @@ export default function AhmedEldinCaseStudy() {
               flex-direction: column;
             }
             .styled-box {
-              aspect-ratio: 1 / 1;
               width: 100%;
-              border-radius: 20px;
-              padding: 3rem 2.5rem;
+              border-radius: 32px;
+              padding: 2.5rem;
               backdrop-filter: blur(10px);
               transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
               display: flex;
               flex-direction: column;
-              justify-content: center;
+              box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             }
             .styled-box:hover {
               transform: translateY(-5px);

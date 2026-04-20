@@ -7,6 +7,7 @@ import Showcase from "@/components/Showcase";
 import Benefits from "@/components/Benefits";
 import ProcessTimeline from "@/components/ProcessTimeline";
 import FAQAccordion from "@/components/FAQAccordion";
+import CaseStudySection from "@/components/CaseStudySection";
 import Footer from "@/components/Footer";
 
 // We want the galaxy canvas to load only on the client
@@ -21,6 +22,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Showcase />
+      <CaseStudySection />
       <Benefits />
       <ProcessTimeline />
       <FAQAccordion />

@@ -52,17 +52,6 @@ export default function Showcase() {
             ))}
           </motion.div>
         </div>
-
-        {/* Bottom: Button */}
-        <div style={{ padding: '0 5vw', width: '100%', marginTop: '3vh', zIndex: 10, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
-          <p style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: 'clamp(1rem, 1.5vw, 1.25rem)', textAlign: 'center', maxWidth: '600px', margin: 0 }}>
-            If you want to know more about our real-life work and the process behind it, explore our case studies.
-          </p>
-          <Link href="/case-study" className={styles.btn} style={{ padding: '0.8rem 2rem', fontSize: '1rem' }}>
-            Case Studies
-          </Link>
-        </div>
-
       </div>
     </section>
   );
