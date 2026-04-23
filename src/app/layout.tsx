@@ -11,10 +11,10 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Envision - Organic Content Machine",
+  title: "Envision - We Build organic content machine for Entrepreneurs and podcasters",
   description: "Helping you grow with engaging organic content that brings in quality leads. Envision helps you generate over 1M+ organic views in just 3 months.",
   openGraph: {
-    title: "Envision - Organic Content Machine",
+    title: "Envision - We Build organic content machine for Entrepreneurs and podcasters",
     description: "Helping you grow with engaging organic content that brings in quality leads. Envision helps you generate over 1M+ organic views in just 3 months.",
     images: ["/logo.jpg"],
     url: "https://envisionmedia.in/",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Envision - Organic Content Machine",
+    title: "Envision - We Build organic content machine for Entrepreneurs and podcasters",
     description: "Helping you grow with engaging organic content that brings in quality leads. Envision helps you generate over 1M+ organic views in just 3 months.",
     images: ["/logo.jpg"]
   }

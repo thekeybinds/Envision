@@ -12,21 +12,26 @@ export default function Hero() {
     }
   };
 
-  const titleWords = ["Organic", "Content", "Machine"];
+  const titleLines = [
+    { text: "We Build", type: 'default' },
+    { text: "organic content machine", type: 'gradient' },
+    { text: "for ", type: 'default', highlight: "Entrepreneurs" },
+    { text: "and ", type: 'default', highlight: "podcasters" }
+  ];
 
   const container = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.15,
       }
     }
   };
 
   const item = {
     hidden: { y: "100%" },
-    show: { y: "0%", transition: { duration: 1, ease: [0.16, 1, 0.3, 1] as any } }
+    show: { y: "0%", transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as any } }
   };
 
   return (
@@ -34,11 +39,18 @@ export default function Hero() {
       <div className={`container ${styles.heroContent}`}>
         <motion.div variants={container} initial="hidden" animate="show">
           <h1 className={styles.heroTitle}>
-            {titleWords.map((word, i) => (
+            {titleLines.map((line, i) => (
               <React.Fragment key={i}>
                 <span className={styles.wordContainer}>
-                  <motion.span variants={item} style={{ display: 'inline-block' }} className={i === 1 ? styles.textGradient : ''}>
-                    {word}
+                  <motion.span 
+                    variants={item} 
+                    style={{ display: 'inline-block' }} 
+                    className={line.type === 'gradient' ? styles.textGradient : ''}
+                  >
+                    {line.text}
+                    {line.highlight && (
+                      <span className={styles.textAccent}>{line.highlight}</span>
+                    )}
                   </motion.span>
                 </span>
                 <br />
