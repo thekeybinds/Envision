@@ -6,7 +6,7 @@ import styles from "./components.module.css";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const videos = [
-  "1140263898", "1140263881", "1140263854", "1140263819", 
+  "1140263898", "1140263881", "1140263854", "1140263819",
   "1140263800", "1140263772", "1140263745", "1140263726"
 ];
 
@@ -18,23 +18,65 @@ export default function Showcase() {
 
   const x = useTransform(scrollYProgress, [0, 1], ["5%", "-50%"]);
 
+  const marqueeRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress: marqueeScroll } = useScroll({
+    target: marqueeRef,
+    offset: ["start end", "end start"]
+  });
+  const marqueeX = useTransform(marqueeScroll, [0, 1], ["0%", "-5%"]);
+  const marqueeXReverse = useTransform(marqueeScroll, [0, 1], ["-5%", "0%"]);
+
+  const marqueeText = "Podcast Video ✦ Viral Clips ✦ Documentary Videos ✦ YouTube videos ✦ Realtors ✦ Business Owners ✦ Coaches ✦ Creators ✦ Podcaster ✦ ";
+
   return (
     <>
+      {/* Marquee Section */}
+      <div ref={marqueeRef} style={{ overflow: 'hidden', whiteSpace: 'nowrap', padding: '6rem 0 2rem', width: '100%', position: 'relative', zIndex: 10, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+        <motion.div style={{ x: marqueeX, display: 'inline-block', willChange: 'transform' }}>
+          <span style={{
+            fontSize: 'clamp(1.5rem, 2.5vw, 2.5rem)',
+            fontFamily: 'var(--font-display)',
+            fontWeight: 900,
+            textTransform: 'uppercase',
+            color: '#fff',
+            paddingRight: '1rem',
+            display: 'inline-block'
+          }}>
+            {marqueeText.repeat(4)}
+          </span>
+        </motion.div>
+
+        <motion.div style={{ x: marqueeXReverse, display: 'inline-block', willChange: 'transform' }}>
+          <span style={{
+            fontSize: 'clamp(1.5rem, 2.5vw, 2.5rem)',
+            fontFamily: 'var(--font-display)',
+            fontWeight: 900,
+            textTransform: 'uppercase',
+            color: '#fff',
+            paddingRight: '1rem',
+            paddingRight: '1rem',
+            display: 'inline-block'
+          }}>
+            {marqueeText.repeat(4)}
+          </span>
+        </motion.div>
+      </div>
+
       <section id="showcase" className={styles.showcaseContainer} ref={targetRef}>
         <div className={styles.stickyGallery} style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start' }}>
-          
+
           {/* Top: Title & Subtitle */}
           <div style={{ padding: '0 5vw', width: '100%', marginBottom: '2vh', zIndex: 10 }}>
             <h2 className={styles.sectionTitle} style={{ fontSize: 'clamp(2.5rem, 5vw, 6rem)', marginBottom: '0.5rem' }}>Our Work</h2>
             <p className={styles.sectionSubtitle} style={{ color: 'var(--accent-secondary)', margin: 0 }}>Selected Portfolios</p>
           </div>
-          
+
           {/* Middle: Carousel */}
           <div style={{ width: '100%', overflow: 'visible' }}>
             <motion.div style={{ x }} className={styles.galleryTrack}>
               {videos.map((id, index) => (
-                <motion.div 
-                  key={`${id}-${index}`} 
+                <motion.div
+                  key={`${id}-${index}`}
                   className={styles.showcaseItem}
                   style={{ height: 'min(600px, 55vh)', width: 'min(350px, 32vh)' }}
                   initial={{ opacity: 0, scale: 0.8 }}
@@ -62,10 +104,10 @@ export default function Showcase() {
           <h2 className={styles.sectionTitle} style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', marginBottom: '0.5rem' }}>Podcast Trailers</h2>
           <p className={styles.sectionSubtitle} style={{ color: 'var(--accent-secondary)', margin: 0 }}>Latest Episodes & Highlights</p>
         </div>
-        
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
           gap: '2rem',
           padding: '0 5vw'
         }}>
