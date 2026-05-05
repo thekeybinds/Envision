@@ -91,6 +91,51 @@ export default function Showcase() {
                     allowFullScreen
                     title={`Vimeo ${id}`}
                   ></iframe>
+                  
+                  {/* Open Button Overlay */}
+                  <a
+                    href={`https://vimeo.com/${id}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      position: 'absolute',
+                      bottom: '1.25rem',
+                      right: '1.25rem',
+                      padding: '0.5rem 1.25rem',
+                      backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                      backdropFilter: 'blur(10px)',
+                      WebkitBackdropFilter: 'blur(10px)',
+                      border: '1px solid rgba(255, 255, 255, 0.2)',
+                      borderRadius: '100px',
+                      color: '#fff',
+                      fontSize: '0.875rem',
+                      fontWeight: 600,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.05em',
+                      textDecoration: 'none',
+                      zIndex: 20,
+                      transition: 'all 0.3s ease',
+                      pointerEvents: 'auto',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.5rem'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+                      e.currentTarget.style.transform = 'scale(1.05)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+                      e.currentTarget.style.transform = 'scale(1)';
+                    }}
+                  >
+                    Open
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </a>
                 </motion.div>
               ))}
             </motion.div>
