@@ -54,7 +54,6 @@ export default function Showcase() {
             textTransform: 'uppercase',
             color: '#fff',
             paddingRight: '1rem',
-            paddingRight: '1rem',
             display: 'inline-block'
           }}>
             {marqueeText.repeat(4)}
@@ -91,7 +90,7 @@ export default function Showcase() {
                     allowFullScreen
                     title={`Vimeo ${id}`}
                   ></iframe>
-                  
+
                   {/* Open Button Overlay */}
                   <a
                     href={`https://vimeo.com/${id}`}
